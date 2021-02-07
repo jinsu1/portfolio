@@ -390,3 +390,47 @@ p {
   opacity: 0.8;
   transform: translateY(0px);
 }
+
+/* Testimonial */
+#testimonials {
+  background-color: var(--color-light-white);
+}
+
+.testimonials {
+  margin:40px;
+}
+
+.testimonial {
+  display: flex;
+  margin: 32px 0;
+  
+}
+
+.testimonials__avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.testimonials__avatar:nth-child(odd) {
+  margin-right: 40px;
+}
+
+.testimonials__avatar:nth-child(even) {
+  margin-left: 40px;
+}
+
+.testimonials__speech-bubble {
+  background-color: white;
+  border-radius: var(--size--border--radius);
+  padding: 18px;
+}
+
+.testmonials__speech-bublle p {
+  color: var(--color-light-grey);
+}
+
+.testimonials__speech-bubble a {
+  color: var(--color-pink);
+}
+
