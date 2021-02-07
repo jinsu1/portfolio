@@ -52,7 +52,7 @@
     </section>
 
     <!-- About -->
-    <section id="about" class="section">
+    <section id="about" class="section section__container">
         <h1>About me</h1>
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Id,
@@ -91,7 +91,7 @@
                 <img 
                 src="imgs/jobs/job__logo.png"
                 alt="shingu"
-                class="box job_logo"
+                class="job__logo"
                 >
                 <div class="job__description">                
                     <p class="job__name">신구대학교</p>
@@ -103,42 +103,47 @@
     </section>
     <!-- Skills -->
     <section id="skills" class="section">
-        <h1>Skills</h1>
+        <div class="section__container">
+            <h1>Skills</h1>
         <h2>Skills & Attributes</h2>
         <p>
             자격증 정보처리산업기사, 컴활2급, 새로운걸 배우는데 관심있음, 시간계획 잘지킴, 멘탈강함
         </p>
         <div class="skillset">
             <div class="skillset__left">
-                <h3 class="skillset_title">skills</h3>
+                <h3 class="skillset__title">Skills</h3>
                 <div class="skill">
                     <div class="skill__description">
                         <span>HTML</span>
                         <span>90%</span>
                     </div>
                         <div class="skill__bar">
-                            <div class="skill__value"></div>
+                            <div class="skill__value" style="width: 90%"></div>
                         </div>
+                </div>
+                <div class="skill">
                     <div class="skill__description">
                         <span>JAVASCRIPT</span>
                         <span>80%</span>
                     </div>
                         <div class="skill__bar">
-                            <div class="skill__value"></div>
+                            <div class="skill__value" style="width: 80%"></div>
                         </div>
+                </div>
+                <div class="skill">
                     <div class="skill__description">
                         <span>CSS</span>
                         <span>80%</span>
                     </div>
                         <div class="skill__bar">
-                            <div class="skill__value"></div>
+                            <div class="skill__value" style="width: 80%"></div>
                         </div>
-                </div>
+                 </div>       
             </div>
 
-            <div class="skillset_right">
+            <div class="skillset__right">
                 <div class="tools">
-                    <h3 class="skillset_title">Tools</h3>
+                    <h3 class="skillset__title">Tools</h3>
                         <ul class="tools__list">
                             <li><span>Visual Studio Code</span></li>
                             <li><span>STS</span></li>
@@ -148,8 +153,8 @@
                         </ul>
                 </div>
                 <div class="etc">
-                    <h3 class="skillset_title">Etc</h3>
-                        <ul class="Etc_list">
+                    <h3 class="skillset__title">Etc</h3>
+                        <ul class="Etc__list">
                             <li><span>git</span></li>
                             <li><span>2</span></li>
                             <li><span>3</span></li>
@@ -157,6 +162,7 @@
 
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <!-- Work -->
@@ -282,7 +288,7 @@
                 <img 
                 src="imgs/testimonials/people1.jpg" 
                 alt="People" 
-                class="testimonials_avata"
+                class="testimonials__avata"
                 >
                 <div class="testimonials__speech-bubble">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam facilis sint ullam culpa illo minus numquam repellat eum porro illum mollitia assumenda est quas, unde officiis amet omnis, eos corrupti.</p>
@@ -294,7 +300,7 @@
                 <img 
                 src="imgs/testimonials/people1.jpg" 
                 alt="People" 
-                class="testimonials_avata"
+                class="testimonials__avata"
                 >
                 <div class="testimonials__speech-bubble">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam facilis sint ullam culpa illo minus numquam repellat eum porro illum mollitia assumenda est quas, unde officiis amet omnis, eos corrupti.</p>
