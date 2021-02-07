@@ -75,7 +75,7 @@ h1 {
 }
 
 h2 {
-  font-size: var(--font-regular);
+  font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
   color: var(--color-black);
   margin: 8px 0 8px 0;
@@ -434,3 +434,34 @@ p {
   color: var(--color-pink);
 }
 
+/* Contack */
+
+#contact {
+  background-color: var(--color-pink);
+}
+
+.contact__title {
+  color: var(--color-white);
+  margin: 32px 0;
+}
+
+.contact__email {
+  color: var(--color-white);
+  font-weight: var(--weight-semi-bold);
+}
+
+.contact__links {
+  font-size: var(--font-large);
+  margin: 24px 0;
+}
+
+.contact__links i:hover{
+  transform: scale(1.2);
+  color: var(--color-black);
+  transition: var(--animation-duration) ease-in;
+}
+
+.contact__right {
+  color: var(--color-dark-white);
+  font-size: var(--font-micro);
+}
