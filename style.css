@@ -97,19 +97,28 @@ p {
 
 /* Navbar */
 #navbar {
+  position: fixed;
   display: flex;
-  background-color: var(--color-pink);
+  background-color: transparent;
   justify-content: space-between;
   align-items: center;
-  color: var(--color-white);
   padding: 16px;
+  width:100%;
+  transition: all var(--animation-duration) ease-in-out;
+}
+
+#navbar.navbar--dark {
+  background-color: var(--color-pink);
+  padding: 8px;
 }
 
 .navbar__menu {
   display: flex;
+  color: var(--color-white);
 }
 
 .navbar__logo {
+  color: var(--color-white);
   font-size: var(--font-medium);
   font-weight: var(--weight-bold);
 }
@@ -143,6 +152,7 @@ p {
 #home {
   background: url("imgs/mainBackground.png") center/cover no-repeat;
   padding: 40px;
+  padding: 150px;
   text-align: center;
 }
 
