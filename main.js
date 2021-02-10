@@ -14,13 +14,23 @@ document.addEventListener('scroll', () => {
 // navbar메뉴 클릭시 스크롤 이동
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event) =>{
-const target= event.target;
-const link= target.dataset.link;
-if (link == null) {
-    return;
-}
-console.log(event.target.dataset.link);
-const scrollTo= document.querySelector(link);
-scrollTo.scrollIntoView({behavior: 'smooth'});
+    const target= event.target;
+    const link= target.dataset.link;
+    if (link == null) {
+      return;
+    }
+    scrollIntoView(link);
 
 });
+
+// contactMe button 클릭시 스크롤 이동
+const contactMeBtn = document.querySelector('.home__contact');
+contactMeBtn.addEventListener('click', (event) => {
+    scrollIntoView('#contact');
+});
+
+function scrollIntoView(selector) {
+    const scrollTo= document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior:'smooth'});
+
+}
