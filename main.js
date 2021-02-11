@@ -41,6 +41,21 @@ document.addEventListener('scroll', () => {
  
 });
 
+// arrowUpBtn 스크롤시 나타나기
+const arrowUp = document.querySelector('.arrowUpBtn')
+document.addEventListener('scroll', () => {
+    if(window.scrollY > homeHeight / 2) {
+        arrowUp.classList.add('visible');
+    } else{
+        arrowUp.classList.remove('visible');
+    }
+});
+
+// arrowUpBtn 활성화
+arrowUp.addEventListener('click', () => {
+    scrollIntoView('#home');
+});
+
 
 
 

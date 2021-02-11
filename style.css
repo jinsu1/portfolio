@@ -455,7 +455,7 @@ p {
   color: var(--color-pink);
 }
 
-/* Contack */
+/* Contact */
 
 #contact {
   background-color: var(--color-pink);
@@ -485,6 +485,22 @@ p {
 .contact__right {
   color: var(--color-dark-white);
   font-size: var(--font-micro);
+}
+
+/* ArrowUp Btn */
+
+.arrowUpBtn {
+  position : fixed;
+  bottom: 30px;
+  right: 30px;
+  opacity:0;
+  transition: var(--animation-duration) ease-in-out;
+  pointer-events: none;
+}
+
+.arrowUpBtn.visible {
+  opacity:1;
+  pointer-events: auto;
 }
 
 @media screen and (max-width: 768px) {
