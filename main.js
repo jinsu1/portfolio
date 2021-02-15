@@ -56,6 +56,7 @@ arrowUp.addEventListener('click', () => {
     scrollIntoView('#home');
 });
 
+
 // Projects
 const workBtnContainer = document.querySelector('.work__categories');
 const projectContainer  = document.querySelector('.work__projects');
@@ -65,6 +66,14 @@ workBtnContainer.addEventListener('click', (e) => {
     if(filter == null) {
     return;
     }
+
+    // category__btn에 selected를 없애고 새로 선택된 item에 selected를 추가
+    const active = document.querySelector('.category__btn.selected');
+    active.classList.remove('selected');
+    const target = 
+        e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+    target.classList.add('selected');
+
     projectContainer.classList.add('animation-out');
     setTimeout(() => {
         projects.forEach((project) => {   //forEach이기때문에 배열 수 만큼 반복됨. 기본값invisible로 설정
