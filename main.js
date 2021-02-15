@@ -42,7 +42,7 @@ document.addEventListener('scroll', () => {
 });
 
 // arrowUpBtn 스크롤시 나타나기
-const arrowUp = document.querySelector('.arrowUpBtn')
+const arrowUp = document.querySelector('.arrowUpBtn');
 document.addEventListener('scroll', () => {
     if(window.scrollY > homeHeight / 2) {
         arrowUp.classList.add('visible');
@@ -56,7 +56,29 @@ arrowUp.addEventListener('click', () => {
     scrollIntoView('#home');
 });
 
+// Projects
+const workBtnContainer = document.querySelector('.work__categories');
+const projectContainer  = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');
+workBtnContainer.addEventListener('click', (e) => {
+    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+    if(filter == null) {
+    return;
+    }
+    projectContainer.classList.add('animation-out');
+    setTimeout(() => {
+        projects.forEach((project) => {   //forEach이기때문에 배열 수 만큼 반복됨. 기본값invisible로 설정
+            console.log(project.dataset.type);
+            if( filter === '*' || filter === project.dataset.type) {
+                project.classList.remove('invisible'); 
+            }else {
+                project.classList.add('invisible');
+            }
+        });
+        projectContainer.classList.remove('animation-out');
+    }, 300);
 
+});
 
 
 // 스크롤 이동힘수
@@ -75,3 +97,4 @@ function scrollIntoView(selector) {
             behavior:'smooth'
         });
 }
+
