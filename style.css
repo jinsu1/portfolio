@@ -102,7 +102,7 @@ p {
   background-color: transparent;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
+  padding: 8px;
   width:100%;
   transition: all var(--animation-duration) ease-in-out;
   z-index: 1;
@@ -146,6 +146,13 @@ p {
   color: var(--color-white);
   top: 20px;
   display: none;
+  border: 1px solid var(--color-pink);
+  border-radius: var(--size--border--radius );
+}
+
+.navbar__toggle-btn:hover {
+  border-color: var(--color-white);
+  background-color: var(--color-dark-pink);
 }
 
 /* Home */
@@ -403,7 +410,7 @@ p {
 }
 
 .project__description h3 {
-  color: var(--color-white);
+  color: var(--color-orange);
 }
 
 .project__description h3:after {
@@ -414,7 +421,8 @@ p {
   background-color: var(--color-dark-white);
   position: relative;
   left: 50%;
-  margin: 8px 0 0 -12px;
+  transform: translateX(-50%);
+  margin-top: 8px;
 }
 
 .project:hover .project__description{
@@ -516,18 +524,25 @@ p {
 @media screen and (max-width: 768px) {
   .navbar__toggle-btn {
     display: block;
+    top: 12px;
+    right:10px;
   }
 
   #navbar {
     flex-direction: column;
     align-items: flex-start;
+    background-color: var(--color-pink);
   }
 
   .navbar__menu {
     flex-direction: column;
-    align-items: center;
+    text-align: center;
     width: 100%;
     display: none;
+  }
+
+  .navbar__menu.open {
+    display: block;
   }
 
   .about__majors {
