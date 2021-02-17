@@ -560,11 +560,25 @@ p {
   pointer-events: auto;
 }
 
+/* 화면넓이 768px(테블릿)이하 적용 */
 @media screen and (max-width: 768px) {
+:root {  /*미디어쿼리 안에서는 root 변수 우선설정 가능 언급되지않은건 바깥 root가 적용*/
+
+   /* Response Font size */
+   --font-large: 30px;
+   --font-medium: 18px;
+   --font-regular: 16px;
+   --font-small: 14px;
+   --font-micro: 12px;
+
+}
+  #home {
+    padding: 60px;
+  }
   .navbar__toggle-btn {
     display: block;
-    top: 12px;
-    right:10px;
+    top: 7px;
+    right:7px;
   }
 
   #navbar {
@@ -584,6 +598,21 @@ p {
     display: block;
   }
 
+  .home__avatar {
+    width: 150px;
+    height: 150px;
+  }
+
+  .section {
+    padding: 16px;
+  }
+
+  .aboutSet {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 28px;
+  }
+
   .about__majors {
     flex-direction: column; 
   }
@@ -600,9 +629,34 @@ p {
     flex-grow: 1;
   }
 
+  .testimonial {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .testimonials__avatar {
     width: 80px;
     height: 80px;
+  }
+
+  .testimonials__avatar:nth-child(odd) {
+    margin: 0 0 8px 0;
+  }
+
+
+  .testimonials__avatar:nth-child(even) {
+    margin: 0 0 8px 0;
+  }
+
+  
+
+  .testimonials__speech-bubble {
+    order: 1;
+  }
+
+  .arrowUpBtn {
+    bottom: 16px;
+    right: 16px;
   }
 
 }
