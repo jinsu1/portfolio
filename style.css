@@ -53,6 +53,8 @@ a {
 ul {
   list-style: none;
   padding-left: 0;
+  font-size: var(--font-regular);
+  font-weight: var(--weight-semi-bold);
 }
 
 li {
@@ -105,7 +107,7 @@ p {
   padding: 8px;
   width:100%;
   transition: all var(--animation-duration) ease-in-out;
-  z-index: 1;
+  z-index: 1; 
 }
 
 #navbar.navbar--dark {
@@ -184,6 +186,10 @@ p {
   border-radius: var(--size--border--radius);
 }
 
+.home__contact:hover {
+  background-color:var(--color-dark-pink);
+}
+
 /* Section Common */
 .section {
   text-align: center;
@@ -198,10 +204,38 @@ p {
 
 /* About */
 
+.aboutSet {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  margin-top: 80px;
+}
+
+.about__title {
+  padding-bottom: 8px;
+}
+
+/* .about__left {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+}
+
+
+.about__right {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+} */
+
+.about__description {
+  padding: 24px;
+}
+
 .about__majors {
   display: flex;
   justify-content: space-between;
-  margin: 80px 0;
+  margin: 15px 0;
   padding: 40px;
 }
 
@@ -485,6 +519,11 @@ p {
 }
 
 .contact__email {
+  color: var(--color-white);
+  font-weight: var(--weight-semi-bold);
+}
+
+.contact__phone {
   color: var(--color-white);
   font-weight: var(--weight-semi-bold);
 }
