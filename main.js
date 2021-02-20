@@ -21,7 +21,7 @@ navbarMenu.addEventListener('click', (event) =>{
     }
     navbarMenu.classList.remove('open');
     scrollIntoView(link);
-
+    selectNavItem(target);
 });
 
 // Navbar 반응형 toggleBtn 활성화
@@ -96,8 +96,65 @@ workBtnContainer.addEventListener('click', (e) => {
 
 });
 
+// 1. 모든 섹션 요소들을 가지고온다.
+// 2. IntersectionOvserver를 이용해서 모든 섹션들을 관찰한다.
+// 3. 보여지는 섹션에 해당하는 메뉴 아이템을 활성화 시킨다.
+    
+    const sectionIds = ['#home', '#about', '#skills', '#work', '#testimonials', '#contact'];
 
-// 스크롤 이동힘수
+    const sections = sectionIds.map(id => document.querySelector(id));
+    const navItems = sectionIds.map(id => document.querySelector(`[data-link="${id}"]`)
+    );
+
+    let selectedNavIndex = 0;
+    let selectedNavItem = navItems[0];
+    
+    //selected에 navItems[int] 값이 들어와야함
+    function selectNavItem(selected) {
+        selectedNavItem.classList.remove('active');
+        selectedNavItem = selected;
+        selectedNavItem.classList.add('active');
+    }
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.3,
+    }
+
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if(!entry.isIntersecting && entry.intersectionRatio > 0) {
+                const index = sectionIds.indexOf(`#${entry.target.id}`);
+                //스크롤링이 아래로되어서 페이지가 올라옴
+                if(entry.boundingClientRect.y < 0) {
+                    selectedNavIndex = index + 1;
+                } else {
+                    selectedNavIndex = index - 1;
+                }
+            //   selectNavItem(navItems[selectedNavIndex]);
+            }
+        });
+    
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    sections.forEach(section => observer.observe(section));
+
+    window.addEventListener('wheel', () => {
+        if(window.scrollY === 0){
+            selectedNavIndex = 0;
+            //wondow.scrollY는 현재화면의 Y좌표 시작값 + window.innerHeight는 현재 보여지는 화면의 높이 값
+            //wondow.scrollY + window.innerHeight의 값이 4037.2이라 작동되지 않을 수 있으니 올림 해준다.
+        } else if(Math.ceil(window.scrollY + window.innerHeight) >= document.body.clientHeight) {
+            //배열의 길이가 6이면 주소값은 5
+            selectedNavIndex = navItems.length - 1;
+        }
+        selectNavItem(navItems[selectedNavIndex]);
+      }); 
+
+
+      // 스크롤 이동힘수
 function scrollIntoView(selector) {
     const scrollTo= document.querySelector(selector);
     // scrollTo.scrollIntoView({behavior:'smooth'});
@@ -112,5 +169,6 @@ function scrollIntoView(selector) {
             left:left,
             behavior:'smooth'
         });
+        
+        selectNavItem(navItems[sectionIds.indexOf(selector)]);
 }
-
