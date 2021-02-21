@@ -622,6 +622,10 @@ p {
     flex-direction: column; 
   }
 
+  .major__icon {
+    margin-top: 36px;
+  }
+
   .major {
     margin-bottom: 38px;
   }
