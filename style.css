@@ -537,14 +537,35 @@ p {
 }
 
 .contact__links {
-  font-size: var(--font-large);
-  margin: 24px 0;
+  perspective: 1000px;
+  position: relative;
+
 }
 
-.contact__links i:hover{
-  transform: scale(1.2);
-  color: var(--color-black);
-  transition: var(--animation-duration) ease-in;
+.cube {
+  font-size: var(--font-large);
+  transform-style: preserve-3d;
+  transition: 0.5s;
+}
+
+.cube i {
+  position: relative;
+  top: 0;
+  left: 1.5%;
+  transform: translate(-50%, -50%);
+}
+
+.cube i:nth-child(1) {
+  transform: translateZ(20px);
+}
+
+.cube i:nth-child(2) {
+  transform: rotateX(90deg) translateZ(20.5px) translateX(-55px);
+  color:var(--color-black);
+}
+
+.cube:hover{
+  transform: rotateX(-90deg);
 }
 
 .contact__right {
