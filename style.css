@@ -556,6 +556,7 @@ p {
 }
 
 .cube__front {
+  z-index:1;
   width: 50px;
   transform: translateZ(25px);
 }
