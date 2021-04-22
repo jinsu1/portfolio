@@ -519,53 +519,53 @@ p {
 
 #contact {
   background-color: var(--color-pink);
+  position: relative;
 }
 
 .contact__title {
   color: var(--color-white);
-  margin: 32px 0;
+  margin: 24px 0;
 }
 
 .contact__email {
   color: var(--color-white);
   font-weight: var(--weight-semi-bold);
+  margin-bottom: 20px;
 }
 
 .contact__phone {
   color: var(--color-white);
   font-weight: var(--weight-semi-bold);
+  margin-bottom: 70px;
 }
 
 .contact__links {
+  position: absolute;
+  left: 50%;
+  top: 72%;
+  transform: translate(-50%, -50%);
   perspective: 1000px;
-  position: relative;
-
 }
 
 .cube {
-  font-size: var(--font-large);
+  width: 50px;
+  height: 50px;
+  text-align: center;
   transform-style: preserve-3d;
   transition: 0.5s;
 }
 
-.cube i {
-  position: relative;
-  top: 0;
-  left: 1.5%;
-  transform: translate(-50%, -50%);
+.cube__front {
+  width: 50px;
+  transform: translateZ(25px);
+}
+.cube__back {
+  width: 50px;
+  transform: rotateX(90deg) translateZ(84px);
 }
 
-.cube i:nth-child(1) {
-  transform: translateZ(20px);
-}
-
-.cube i:nth-child(2) {
-  transform: rotateX(90deg) translateZ(20.5px) translateX(-55px);
-  color:var(--color-black);
-}
-
-.cube:hover{
-  transform: rotateX(-90deg);
+.cube:hover {
+    transform: rotateX(-90deg);
 }
 
 .contact__right {
